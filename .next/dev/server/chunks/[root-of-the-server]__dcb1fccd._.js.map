@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/ujjawalsingh/Desktop/dashboard/src/app/api/environment/route.ts"],"sourcesContent":["import { NextResponse } from 'next/server';\n\nexport async function GET(request: Request) {\n  const { searchParams } = new URL(request.url);\n  const lat = searchParams.get('lat') || '28.6139'; // Default: Delhi\n  const lon = searchParams.get('lon') || '77.2090';\n\n  const API_KEY = process.env.NEXT_PUBLIC_IQAIR_API_KEY;\n  const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key=${API_KEY}`;\n\n  try {\n    const res = await fetch(url);\n    const data = await res.json();\n    return NextResponse.json(data);\n  } catch (error) {\n    return NextResponse.json({ error: 'Failed to fetch environmental data' }, { status: 500 });\n  }\n}"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,IAAI,OAAgB;IACxC,MAAM,EAAE,YAAY,EAAE,GAAG,IAAI,IAAI,QAAQ,GAAG;IAC5C,MAAM,MAAM,aAAa,GAAG,CAAC,UAAU,WAAW,iBAAiB;IACnE,MAAM,MAAM,aAAa,GAAG,CAAC,UAAU;IAEvC,MAAM;IACN,MAAM,MAAM,CAAC,8CAA8C,EAAE,IAAI,KAAK,EAAE,IAAI,KAAK,EAAE,SAAS;IAE5F,IAAI;QACF,MAAM,MAAM,MAAM,MAAM;QACxB,MAAM,OAAO,MAAM,IAAI,IAAI;QAC3B,OAAO,gJAAY,CAAC,IAAI,CAAC;IAC3B,EAAE,OAAO,OAAO;QACd,OAAO,gJAAY,CAAC,IAAI,CAAC;YAAE,OAAO;QAAqC,GAAG;YAAE,QAAQ;QAAI;IAC1F;AACF"}}]
+}

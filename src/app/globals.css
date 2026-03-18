@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* These two lines are the v4 fix */
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 180 10% 92%;
+    --card: 220 18% 8%;
+    --card-foreground: 180 10% 92%;
+    --popover: 220 18% 8%;
+    --popover-foreground: 180 10% 92%;
+    --primary: 160 100% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 20% 4%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 160 80% 40%;
+    --accent-foreground: 220 20% 4%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 160 100% 50%;
+    --radius: 0.75rem;
+    --glow-primary: 160 100% 50%;
+    --glow-secondary: 190 100% 50%;
+    --glow-accent: 220 80% 60%;
+  }
+
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-body antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-display; }
+}
+
+@layer components {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3), 0 0 60px hsl(var(--glow-primary) / 0.1);
+  }
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.3), 0 0 60px hsl(var(--glow-secondary) / 0.1);
+  }
+  .glass-surface {
+    background: hsl(var(--glow-primary) / 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glow-primary) / 0.25);
+  }
+  .text-gradient-eco {
+    background: linear-gradient(135deg, hsl(var(--glow-primary)), hsl(var(--glow-secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-gradient-radial-hero {
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--glow-primary) / 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 70% 60%, hsl(var(--glow-secondary) / 0.05) 0%, transparent 60%);
+  }
+}

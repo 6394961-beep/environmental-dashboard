@@ -1,0 +1,6 @@
+{
+  "/api/ai-coach/route": "app/api/ai-coach/route.js",
+  "/api/environment/route": "app/api/environment/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js"
+}
