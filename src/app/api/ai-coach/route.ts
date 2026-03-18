@@ -12,8 +12,7 @@ export async function POST(req: Request) {
     const prompt = `Provide 2 brief, actionable health tips for residents of ${city} where the AQI is ${aqi}. Use bold text for key terms.`;
 
     // 2. Direct REST API URL (Bypasses the buggy SDK entirely)
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
     // 3. Make a native web request straight to Google
     const response = await fetch(url, {
       method: "POST",
