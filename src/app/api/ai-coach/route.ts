@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
     // Use the version-stable model name
     // If "gemini-1.5-flash" fails, "gemini-pro" is a guaranteed fallback
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = `Provide 2 brief, actionable health tips for residents of ${city} where the AQI is ${aqi}. Use bold text for key terms.`;
 
