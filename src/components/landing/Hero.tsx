@@ -21,16 +21,16 @@ export default function Hero() {
           <span className="text-foreground">Intelligence</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-          Monitor air quality in real-time, get AI-driven environmental coaching, and analyze pollutant data with cutting-edge intelligence.
+          An AI-powered environmental engine tracking real-time air quality, historical temperature anomalies, and global water consumption to deliver actionable, localized efficiency protocols
         </motion.p>
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 1 }}>
+        {/* <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 1 }}>
           <Link href="/dashboard" className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-primary text-primary-foreground font-display font-semibold text-lg glow-primary transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(160_100%_50%/0.4)]">
             Enter Dashboard
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="ml-1">
               <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>

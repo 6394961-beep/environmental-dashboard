@@ -1,3 +1,9 @@
 {
-  "/page": "app/page.js"
+  "/api/ai-coach/route": "app/api/ai-coach/route.js",
+  "/api/environment/route": "app/api/environment/route.js",
+  "/api/water-coach/route": "app/api/water-coach/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js",
+  "/temperature/page": "app/temperature/page.js",
+  "/water/page": "app/water/page.js"
 }

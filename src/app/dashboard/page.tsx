@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Link from 'next/link'; // Added Link import
 import AirQualityCard from '../../components/AirQualityCard';
 import PollutantChart from '../../components/PollutantChart';
 import AICounsel from '../../components/AICounsel';
@@ -99,27 +100,34 @@ export default function Dashboard() {
         {/* UPDATED: Increased vertical spacing to space-y-12 */}
         <div className="max-w-6xl mx-auto space-y-12 relative z-10">
           
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 glass-surface p-6 rounded-3xl">
-            <div>
-              <h1 className="text-3xl font-display font-bold tracking-tight text-gradient-eco">GeoStats Dashboard</h1>
-              <p className="text-muted-foreground text-sm mt-1 uppercase tracking-widest">Real-time environmental tracking</p>
+          {/* Header Section Grouped Together */}
+          <div className="space-y-6">
+            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors inline-block font-medium">
+              ← Back to Home
+            </Link>
+
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 glass-surface p-6 rounded-3xl">
+              <div>
+                <h1 className="text-3xl font-display font-bold tracking-tight text-gradient-eco">GeoStats Dashboard</h1>
+                <p className="text-muted-foreground text-sm mt-1 uppercase tracking-widest">Real-time environmental tracking</p>
+              </div>
+              
+              <form onSubmit={handleSearch} className="flex w-full md:w-auto rounded-2xl">
+                <input
+                  type="text"
+                  placeholder="Search any city..."
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  className="px-5 py-3 rounded-l-2xl border border-r-0 border-border bg-card/50 text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-all w-full md:w-64 placeholder:text-muted-foreground backdrop-blur-sm"
+                />
+                <button 
+                  type="submit"
+                  className="px-6 py-3 bg-primary text-primary-foreground font-display font-semibold rounded-r-2xl transition-all hover:bg-primary/90 glow-primary"
+                >
+                  Search
+                </button>
+              </form>
             </div>
-            
-            <form onSubmit={handleSearch} className="flex w-full md:w-auto rounded-2xl">
-              <input
-                type="text"
-                placeholder="Search any city..."
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                className="px-5 py-3 rounded-l-2xl border border-r-0 border-border bg-card/50 text-foreground focus:outline-none focus:ring-1 focus:ring-primary transition-all w-full md:w-64 placeholder:text-muted-foreground backdrop-blur-sm"
-              />
-              <button 
-                type="submit"
-                className="px-6 py-3 bg-primary text-primary-foreground font-display font-semibold rounded-r-2xl transition-all hover:bg-primary/90 glow-primary"
-              >
-                Search
-              </button>
-            </form>
           </div>
 
           {loading ? (

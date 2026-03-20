@@ -65,6 +65,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/temperature/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/temperature">> = Specific
+  const handler = {} as typeof import("../../../src/app/temperature/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/water/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/water">> = Specific
+  const handler = {} as typeof import("../../../src/app/water/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/api/ai-coach/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/ai-coach">> = Specific
@@ -78,6 +96,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/environment">> = Specific
   const handler = {} as typeof import("../../../src/app/api/environment/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/api/temperature-coach/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/temperature-coach">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/temperature-coach/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/api/water-coach/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/water-coach">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/water-coach/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
